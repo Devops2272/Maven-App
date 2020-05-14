@@ -1,7 +1,7 @@
 
 properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5']]]);
 
-node('Pipeline-Slave2')
+node('slaves')
 
 {
     stage('Checkout code from Git-Hub')
