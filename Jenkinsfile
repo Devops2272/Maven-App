@@ -1,7 +1,9 @@
 
 properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5']]]);
 
-node{
+node('Pipeline-Slave2')
+
+{
     stage('Checkout code from Git-Hub')
     {
        git credentialsId: '834c6c66-c914-437e-9d1b-bac153574eb7', url: 'https://github.com/Devops2272/Maven-App.git' 
