@@ -1,7 +1,7 @@
 
 properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5']]]);
 
-node('slaves')
+node()
 
 {
     stage('Checkout code from Git-Hub')
@@ -29,7 +29,7 @@ node('slaves')
           }
          }
          
-         /*stage('Execute SonarQube report')
+         stage('Execute SonarQube report')
          {
           if (isUnix()) {
            sh 'mvn sonar:sonar'   
@@ -62,7 +62,7 @@ node('slaves')
       stage('Send Notification')
          {
              emailext body: '', subject: 'Jenkins-buil passed', to: 'chhotaraychinmaya@gmail.com'
-         }*/
+         }
 }
     
     
